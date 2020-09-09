@@ -1,0 +1,61 @@
+CREATE TABLE title.akas (
+	titleId varchar(10),
+	ordering int(2),
+	title varchar(255), 
+	region char(2),
+	language char(2),
+	types varchar(30),
+	attributes varchar(30),
+	isOriginalTitle boolean
+);
+
+CREATE TABLE title.basics (
+	tconst 		varchar(10),
+	titleType 	varchar(255),
+	primaryTitle	varchar(255),
+	originalTitle 	varchar(255),
+	isAdult		boolean,
+	startYear	year(4),
+	endYear		year(4),
+	runtimeMinutes	time,
+	genres		varchar(5),
+);
+
+CREATE TABLE title.crew (
+	tconst		varchar(10),
+	directors	varchar(10),
+	writers		varchar(10),
+
+);
+
+CREATE TABLE title.episode (
+	tconst		varchar(10),
+	parentTconst	varchar(10),
+	seasonNumber	int(2),
+	episodeNumber	int(3000),
+);
+
+CREATE TABLE title.ratings (
+	tconst		varchar(10),
+	averageRating	double(1,1),
+	numVotes	int(1000000),
+);
+
+CREATE TABLE name.basics (
+	nconst		varchar(10),
+	primaryName	varchar(255),
+	birthYear	year(4),
+	deathYear	year(4),
+	primaryProfession varchar(255),
+	knownForTitles	varchar(255),
+
+);
+
+CREATE TABLE title.principals (
+	tconst		varchar(10),
+	ordering	int(2),
+	nconst		varchar(255),
+	category	varchar(255),
+	job		varchar(255),
+	characters 	varchar(255)
+);
